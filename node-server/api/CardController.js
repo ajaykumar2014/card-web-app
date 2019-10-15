@@ -1,13 +1,12 @@
 var CardValiator= require('./CardValiator')
-var CCardInfoInMemory = [];
+const LocalDBStore = require('../store/LocalDBStore')
+
 
 exports.addCreditCardInfo = (req,res) =>
 {
     let cardInfo = eval(req.body);
     console.log("request card info "+JSON.stringify(cardInfo));
-    let cardHolderName = cardInfo.name;
     let cardNumber = cardInfo.cnumber;
-    let cardlimit = cardInfo.climit;
     let callBackRes = {
         code:200,
         status:"success",
@@ -15,7 +14,7 @@ exports.addCreditCardInfo = (req,res) =>
     }
     if(CardValiator.ccvalidate(cardNumber)){
         console.log("Card is valid");
-        CCardInfoInMemory.push(cardInfo)
+        LocalDBStore.save(cardInfo)
     }else{
         callBackRes.status="fail"
         callBackRes.message = "Card validation failed, please enter correct card number!"
@@ -25,10 +24,7 @@ exports.addCreditCardInfo = (req,res) =>
 
 exports.get = (req,res) =>{
     console.log("fetch all credit card details.")
-    res.send(CCardInfoInMemory);
+    res.send(LocalDBStore.fetchAll());
 }
-
-
-
 
 
