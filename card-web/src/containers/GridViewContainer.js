@@ -3,7 +3,11 @@ import TableLayer from './TableLayer'
 
 function GridViewContainer (){
     return (
-        <TableLayer></TableLayer>
+        <div>
+            <h2>Existing Cards</h2>
+            <TableLayer></TableLayer>
+        </div>
+        
     )
 }
 

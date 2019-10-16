@@ -1,6 +1,21 @@
 .App {
   text-align: center;
 }
+.form-control input{
+  border-radius: 1px;
+}
+.error-message{
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #E91E63;
+}
+.App-box{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: 1px;
+}
 
 .App-logo {
   height: 40vmin;

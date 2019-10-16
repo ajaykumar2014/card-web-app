@@ -1,7 +1,7 @@
-import InputField from './InputField'
+import TextField from './TextField'
 import Button from './Button'
 
 export {
-    InputField,
+    TextField,
     Button
 }
