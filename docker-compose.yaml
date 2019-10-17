@@ -2,6 +2,7 @@
 services: 
 
   server: 
+    container_name: card-node-server
     build: ./node-server
     expose: 
       - 7777
@@ -12,6 +13,7 @@ services:
       dockerfile: ./Dockerfile
 
   client: 
+    container_name: card-web-client
     build: ./card-web
     expose: 
       - 3001
