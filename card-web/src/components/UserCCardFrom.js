@@ -46,12 +46,10 @@ class UserCCardFrom extends Component {
        await axios.post(config.SAVE_CARD_DETAIL_URL, this.state.newCardInfo)
           .then(res=>{
               if(res.data.status==='success' && res.data.code=== 200 ){
-                this.props.updateStore(this.state.newCardInfo);  
                 this.setState({
-                    newCardInfo:{},
                     errorMessage : undefined
                 });
-                
+                this.props.updateStore(this.state.newCardInfo);
               }else{
                   this.setState({
                       errorMessage : res.data.message
