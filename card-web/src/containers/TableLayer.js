@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Table from "../components/Table";
 import { connect } from 'react-redux'
 import { refreshCardInfo } from '../actions/index'
+const config = require('../config')
 
 class TableLayer extends Component {
     constructor(props) {
@@ -14,8 +15,8 @@ class TableLayer extends Component {
         //this.fetchUserCardDetails = this.fetchUserCardDetails.bind(this);
     }
     fetchUserCardDetails() {
-        console.log("one")
-        fetch('http://localhost:7777/card/fetch', {
+        console.log("FETch card url "+config.FETCH_CARD_DETAIL_URL);
+        fetch(config.FETCH_CARD_DETAIL_URL, {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
@@ -28,8 +29,9 @@ class TableLayer extends Component {
                     this.props.refreshCardInfoDetails(this.state.cardInfoDetails);
                 })
             }
-        }
-        )
+        }).catch(e=>{
+            this.setState({ isLoading: false }) 
+        });
     }
     componentWillMount() {
         this.fetchUserCardDetails();

@@ -5,6 +5,8 @@ import  { addNewCardDetails }  from '../actions/index'
 import axios from 'axios';
 import uuid from 'uuid'
 
+const config = require('../config')
+
 class UserCCardFrom extends Component {
     constructor(props) {
         super(props);
@@ -41,7 +43,7 @@ class UserCCardFrom extends Component {
     }
 
     saveNewCardDetails = async () =>{
-       await axios.post('http://localhost:7777/card/add', this.state.newCardInfo)
+       await axios.post(config.SAVE_CARD_DETAIL_URL, this.state.newCardInfo)
           .then(res=>{
               if(res.data.status==='success' && res.data.code=== 200 ){
                 this.setState({
@@ -54,13 +56,12 @@ class UserCCardFrom extends Component {
                   })
               }
           })
-          .catch(function (error) {
+          .catch(error=> {
             console.log(error);
-            this.setState({
-                errorMessage : error
-            })
           });
     }
+
+    updateError = (error) =>this.setState({errorMessage : error});
 
     cardHolderNameHandler = (e) => {
         let cardHolderName = e.target.value;

@@ -6,7 +6,7 @@ export const addNewCardDetails = (cardDetails) => {
             id: cardDetails.id,
             name: cardDetails.name,
             cnumber: cardDetails.cnumber,
-            climit: cardDetails.cnumber
+            climit: cardDetails.climit
         }
     }
 }

@@ -6,7 +6,7 @@
 
 	// The Luhn Algorithm. It's so pretty.
 	let nCheck = 0, bEven = false;
-	value = value.replace(/\D/g, "");
+	value = value.toString().replace(/\D/g, "");
 
 	for (var n = value.length - 1; n >= 0; n--) {
 		var cDigit = value.charAt(n),
