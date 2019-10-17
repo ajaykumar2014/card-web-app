@@ -1,0 +1,26 @@
+--- 
+services: 
+
+  server: 
+    build: ./node-server
+    expose: 
+      - 7777
+    ports: 
+      - 7777:7777
+    build:
+      context: ./node-server
+      dockerfile: ./Dockerfile
+
+  client: 
+    build: ./card-web
+    expose: 
+      - 3001
+    ports: 
+      - 3001:3000
+    build:
+      context: ./card-web
+      dockerfile: ./Dockerfile
+    links: 
+      - server  
+
+version: '3.7'
