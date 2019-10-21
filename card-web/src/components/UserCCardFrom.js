@@ -88,9 +88,13 @@ class UserCCardFrom extends Component {
         })
     }
 
+    
     render() {
+        const boxStyle = {
+            width:'50%'
+        }
         return (
-            <div className="App-box" style={{width:'50%'}}>
+            <div className="App-box" style={boxStyle}>
                 {this.state.errorMessage && <span className="error-message">{this.state.errorMessage}</span>}
                 <form onSubmit={(e) => { this.newCardInfoSubmit(e) }}>
                     <TextField type="text" className="form-control" id="name" label="Name" isRequired={true} handleChange={e => this.cardHolderNameHandler(e)}></TextField>
