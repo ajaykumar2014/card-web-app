@@ -1,6 +1,6 @@
 import React from 'react'
 import Row from './Row'
-import CardInfoSchema from '../common/cardInfoSchema'
+//import CardInfoSchema from '../common/cardInfoSchema'
 
 /*
 const style = {
@@ -49,7 +49,7 @@ const Table = ({ dataSet }) => {
 function TableSheet(rowData){
     return (
         <div className="App-box">
-            <table class="table table-bordered">
+            <table className="table table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">Name</th>
