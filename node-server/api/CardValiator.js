@@ -4,7 +4,6 @@
  exports.ccvalidate = (value) =>{
     if (/[^0-9-\s]+/.test(value)) return false;
 
-	// The Luhn Algorithm. It's so pretty.
 	let nCheck = 0, bEven = false;
 	value = value.toString().replace(/\D/g, "");
 

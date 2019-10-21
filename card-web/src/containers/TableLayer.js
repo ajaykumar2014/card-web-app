@@ -15,7 +15,6 @@ class TableLayer extends Component {
         //this.fetchUserCardDetails = this.fetchUserCardDetails.bind(this);
     }
     fetchUserCardDetails() {
-        console.log("FETch card url "+config.FETCH_CARD_DETAIL_URL);
         fetch(config.FETCH_CARD_DETAIL_URL, {
             method: 'GET',
             headers: {
@@ -24,7 +23,6 @@ class TableLayer extends Component {
         }).then(response => {
             if (response.ok) {
                 response.json().then(res => {
-                    console.log(res)
                     this.setState({ cardInfoDetails: res, isLoading: false })
                     this.props.refreshCardInfoDetails(this.state.cardInfoDetails);
                 })
@@ -40,7 +38,6 @@ class TableLayer extends Component {
 
     render() {
         let { cardInfoDetails } = this.props
-        console.log("card details is " + cardInfoDetails)
         if (cardInfoDetails) {
             return (
                 <div>

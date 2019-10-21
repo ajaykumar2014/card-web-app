@@ -25,7 +25,7 @@ app.post("/card/add",CardController.addCreditCardInfo);
 
 console.log(process.env.PORT)
 app.listen(PORT,()=>{
-    console.log("CCard Node Started ....")
+    console.log("Credit Card Node Started.")
 })
 
 module.exports = app; // for testing

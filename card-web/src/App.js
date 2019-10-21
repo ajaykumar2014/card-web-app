@@ -19,8 +19,7 @@ const reducer = combineReducers({
 
 const store = createStore(reducer, composeWithDevTools());
 function App() {
-  console.log(process.env.CARD_SERVICE_URL)
-  return (
+  return (
     <div className="App-box">
       <Provider store={store}>
         <div className="row">

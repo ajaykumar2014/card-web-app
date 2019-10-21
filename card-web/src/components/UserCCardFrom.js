@@ -24,7 +24,6 @@ class UserCCardFrom extends Component {
     newCardInfoSubmit = (e) => {
         e.preventDefault()
         this.fieldValidation();
-        console.log("Console ====" + this.state.newCardInfo.id)
         this.saveNewCardDetails();
     }
 
@@ -57,7 +56,7 @@ class UserCCardFrom extends Component {
               }
           })
           .catch(error=> {
-            console.log(error);
+            console.error(error);
           });
     }
 
@@ -90,7 +89,6 @@ class UserCCardFrom extends Component {
     }
 
     render() {
-        console.log("Error message is "+this.state.errorMessage)
         return (
             <div className="App-box" style={{width:'50%'}}>
                 {this.state.errorMessage && <span className="error-message">{this.state.errorMessage}</span>}
