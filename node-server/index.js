@@ -23,9 +23,8 @@ app.get("/card/fetch",CardController.get);
 app.post("/card/add",CardController.addCreditCardInfo);
 
 
-console.log(process.env.PORT)
 app.listen(PORT,()=>{
-    console.log("Credit Card Node Started.")
+    console.log("Credit Card Node Started on port number "+process.env.PORT)
 })
 
 module.exports = app; // for testing
