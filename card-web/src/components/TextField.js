@@ -5,7 +5,7 @@ function TextField(props){
 
     return(
         <div className="form-group mx-sm-3 mb-2">
-        <label for={props.id}>{props.label}</label>
+        <label htmlFor={props.id}>{props.label}</label>
         <input type={props.type} className={props.className} id={props.id} placeholder={props.label} onChange={props.handleChange} required={props.isRequired}/>
         </div>
     );
