@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "scripts": {
     "start": "node index.js",
     "test": "mocha --timeout 10000"
@@ -14,8 +17,14 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "^3.3.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "mocha": "^6.2.1"
-  }
+  },
+  "browserslist": [
+    ">0.25%",
+    "not op_mini all",
+    "ie 11"
+  ]
 }
